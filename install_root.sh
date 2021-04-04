@@ -28,4 +28,4 @@ sudo curl -fLo "/root/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
 echo -e "\nDone!\n"
 echo -e "------------------------------------------------------\n"
 
-echo -e "\nPlease start neovim as root and run :PlugInstall once."
+echo "Please start neovim as root and run :PlugInstall once."
