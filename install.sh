@@ -20,14 +20,24 @@ else
     git clone "https://github.com/danielgolf/server-dots.git" "$INSTALL_PATH"
 fi
 
+
 cp -r "$INSTALL_PATH/.config" "$HOME"
 cp -r "$INSTALL_PATH/.local" "$HOME"
-cp -r "$INSTALL_PATH/.ssh" "$HOME"
+
+if [[ ! -f $INSTALL_PATH/.ssh/authorized_keys ]] ; then
+    cp -r "$INSTALL_PATH/.ssh" "$HOME"
+fi
+
 cp -r "$INSTALL_PATH/.vim" "$HOME"
 cp "$INSTALL_PATH/.bash_aliases" "$HOME"
 cp "$INSTALL_PATH/.bashrc" "$HOME"
-cp "$INSTALL_PATH/.gitconfig" "$HOME"
+
+if [[ ! -f $INSTALL_PATH/.gitconfig ]] ; then
+    cp "$INSTALL_PATH/.gitconfig" "$HOME"
+fi
+
 cp "$INSTALL_PATH/.tmux.conf" "$HOME"
+
 
 # install pfetch to .local/bin
 curl -fLo "$HOME/.local/bin/pfetch" "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
