@@ -40,8 +40,10 @@ curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
 echo -e "\nDone!\n"
 
 echo "Please install the following package list:"
-echo "neovim fd-find htop colordiff bat fzf ranger python3 python3-pip python3-virtualenv"
+# missing packages: bat
+echo "neovim fd-find htop colordiff fzf tmux ranger python3 python3-pip python3-virtualenv"
 
-echo -e "\nPlease start neovim and run :PlugInstall once.\n"
+echo -e "\nPlease start neovim and run :PlugInstall once."
+echo -e "Please also run 'source ~/.bashrc'.\n"
 
 echo "Root configs can be setup with '~/server-dots/install_root.sh'."
