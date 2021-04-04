@@ -25,6 +25,7 @@ sudo cp "$INSTALL_PATH/.tmux.conf" "/root"
 sudo curl -fLo "/root/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
     "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
-echo -e "\nDone!"
+echo -e "\nDone!\n"
+echo -e "------------------------------------------------------\n"
 
 echo -e "\nPlease start neovim as root and run :PlugInstall once."
