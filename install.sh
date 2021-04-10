@@ -24,7 +24,7 @@ fi
 cp -r "$INSTALL_PATH/.config" "$HOME"
 cp -r "$INSTALL_PATH/.local" "$HOME"
 
-if [[ ! -f $INSTALL_PATH/.ssh/authorized_keys ]] ; then
+if [[ ! -f $HOME/.ssh/authorized_keys ]] ; then
     cp -r "$INSTALL_PATH/.ssh" "$HOME"
 fi
 
@@ -32,7 +32,7 @@ cp -r "$INSTALL_PATH/.vim" "$HOME"
 cp "$INSTALL_PATH/.bash_aliases" "$HOME"
 cp "$INSTALL_PATH/.bashrc" "$HOME"
 
-if [[ ! -f $INSTALL_PATH/.gitconfig ]] ; then
+if [[ ! -f $HOME/.gitconfig ]] ; then
     cp "$INSTALL_PATH/.gitconfig" "$HOME"
 fi
 
