@@ -1,8 +1,11 @@
-#/usr/bin/bash
+#/bin/bash -e
 
-set -e
+if [[ $EUID -ne 0 ]] ; then
+    echo "Please run as root"
+    exit 1
+fi
 
-INSTALL_PATH="$HOME/server-dots"
+INSTALL_PATH="/home/daniel/server-dots"
 
 # this script installs bla bla bla
 echo "This script installs or updates a simple config for the root user."
@@ -14,16 +17,16 @@ if [[ ! -d $INSTALL_PATH/.git ]] ; then
     exit 1
 fi
 
-sudo mkdir -p "/root/.config"
-sudo cp -r "$INSTALL_PATH/.config/nvim" "/root/.config"
-sudo cp -r "$INSTALL_PATH/.vim" "/root"
-sudo cp "$INSTALL_PATH/.bash_aliases_root" "/root/.bash_aliases"
-sudo cp "$INSTALL_PATH/.bash_functions" "/root/.bash_functions"
-sudo cp "$INSTALL_PATH/.bashrc" "/root/.bashrc"
-sudo cp "$INSTALL_PATH/.tmux.conf" "/root"
+mkdir -p "/root/.config"
+cp -r "$INSTALL_PATH/.config/nvim" "/root/.config"
+cp -r "$INSTALL_PATH/.vim" "/root"
+cp "$INSTALL_PATH/.bash_aliases_root" "/root/.bash_aliases"
+cp "$INSTALL_PATH/.bash_functions" "/root/.bash_functions"
+cp "$INSTALL_PATH/.bashrc" "/root/.bashrc"
+cp "$INSTALL_PATH/.tmux.conf" "/root"
 
 # install plug.vim to .local/share
-sudo curl -fLo "/root/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
+curl -fLo "/root/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
     "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
 echo -e "\nDone!\n"

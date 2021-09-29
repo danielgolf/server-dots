@@ -1,6 +1,4 @@
-#/usr/bin/bash
-
-set -e
+#/bin/bash -e
 
 INSTALL_PATH="$HOME/server-dots"
 
