@@ -9,8 +9,10 @@ else
     alias ll='ls -lAh --color=auto --group-directories-first'
 fi
 
-# damit jeder alias auch als root funktioniert
-alias sudo='sudo '
+if [[ -x /usr/bin/sudo ]] ; then
+    # damit jeder alias auch als root funktioniert
+    alias sudo='sudo '
+fi
 
 # orte
 alias ..='cd ../'
@@ -21,7 +23,6 @@ if [[ -d ~/Repositories/dotfiles ]] ; then alias dotf='cd ~/Repositories/dotfile
 # shortcuts
 if [[ -x /usr/bin/ranger ]] ; then alias r='ranger' ; fi
 if [[ -x /usr/bin/nvim && -x /usr/bin/fzf ]] ; then alias vf='nvim $(fzf)' ; fi
-if [[ -x /usr/bin/docker-compose ]] ; then alias compose='docker-compose' ; fi
 
 # programme
 alias df='df -Th'

@@ -18,7 +18,8 @@ sudo mkdir -p "/root/.config"
 sudo cp -r "$INSTALL_PATH/.config/nvim" "/root/.config"
 sudo cp -r "$INSTALL_PATH/.vim" "/root"
 sudo cp "$INSTALL_PATH/.bash_aliases_root" "/root/.bash_aliases"
-sudo cp "$INSTALL_PATH/.bashrc_root" "/root/.bashrc"
+sudo cp "$INSTALL_PATH/.bash_functions" "/root/.bash_functions"
+sudo cp "$INSTALL_PATH/.bashrc" "/root/.bashrc"
 sudo cp "$INSTALL_PATH/.tmux.conf" "/root"
 
 # install plug.vim to .local/share

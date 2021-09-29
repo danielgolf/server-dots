@@ -1,7 +1,13 @@
 #!/usr/bin/bash
 
 # wichtigstes kommmando auf dem terminal - ls
-alias ll='ls -lAh --color=auto --group-directories-first'
+if [[ -x /usr/bin/exa ]] ; then
+    alias exa='exa -Hglam --git --color=auto --group-directories-first'
+    alias ll='exa'
+    alias tree='command exa -Ta'
+else
+    alias ll='ls -lAh --color=auto --group-directories-first'
+fi
 
 # orte
 alias ..='cd ../'

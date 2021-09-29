@@ -22,7 +22,6 @@ fi
 
 
 cp -r "$INSTALL_PATH/.config" "$HOME"
-cp -r "$INSTALL_PATH/.local" "$HOME"
 
 if [[ ! -f $HOME/.ssh/authorized_keys ]] ; then
     cp -r "$INSTALL_PATH/.ssh" "$HOME"
@@ -30,6 +29,7 @@ fi
 
 cp -r "$INSTALL_PATH/.vim" "$HOME"
 cp "$INSTALL_PATH/.bash_aliases" "$HOME"
+cp "$INSTALL_PATH/.bash_functions" "$HOME"
 cp "$INSTALL_PATH/.bashrc" "$HOME"
 
 if [[ ! -f $HOME/.gitconfig ]] ; then
@@ -40,7 +40,8 @@ cp "$INSTALL_PATH/.tmux.conf" "$HOME"
 
 
 # install pfetch to .local/bin
-curl -fLo "$HOME/.local/bin/pfetch" "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
+curl -fLo "$HOME/.local/bin/pfetch" --create-dirs \
+    "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
 chmod 755 "$HOME/.local/bin/pfetch"
 
 # install plug.vim to .local/share
