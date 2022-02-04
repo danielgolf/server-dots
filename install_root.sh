@@ -32,4 +32,9 @@ curl -fLo "/root/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
 echo -e "\nDone!\n"
 echo -e "------------------------------------------------------\n"
 
-echo "Please start neovim as root and run :PlugInstall once."
+if [[ -x /usr/bin/nvim ]] ; then
+    nvim -c "PlugInstall" -c "quit" -c "quit" || exit 1
+else
+    echo "Please start neovim and run ':PlugInstall' once."
+fi
+echo "Please also run 'source ~/.bashrc'."

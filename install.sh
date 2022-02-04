@@ -36,7 +36,6 @@ fi
 
 cp "$INSTALL_PATH/.tmux.conf" "$HOME"
 
-
 # install pfetch to .local/bin
 curl -fLo "$HOME/.local/bin/pfetch" --create-dirs \
     "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
@@ -49,11 +48,15 @@ curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
 echo -e "\nDone!\n"
 echo -e "------------------------------------------------------\n"
 
+if [[ -x /usr/bin/nvim ]] ; then
+    nvim -c "PlugInstall" -c "quit" -c "quit" || exit 1
+else
+    echo "Please start neovim after installation and run ':PlugInstall' once."
+fi
+echo -e "\nPlease run 'source ~/.bashrc'.\n"
+
 echo "Please install the following package list:"
 # missing packages: bat
 echo "neovim fd-find htop colordiff fzf tmux ranger python3 python3-pip python3-virtualenv"
 
-echo -e "\nPlease start neovim and run :PlugInstall once."
-echo -e "Please also run 'source ~/.bashrc'.\n"
-
-echo "Root configs can be setup with '~/server-dots/install_root.sh'."
+echo -e "\nRoot configs can be setup with '~/server-dots/install_root.sh'."
