@@ -56,7 +56,6 @@ fi
 echo -e "\nPlease run 'source ~/.bashrc'.\n"
 
 echo "Please install the following package list:"
-# missing packages: bat
-echo "neovim fd-find htop colordiff fzf tmux ranger python3 python3-pip python3-virtualenv"
+echo "neovim fd-find htop colordiff tmux ranger python3 python3-pip python3-virtualenv"
 
 echo -e "\nRoot configs can be setup with '~/server-dots/install_root.sh'."

@@ -25,11 +25,8 @@ alias ...='cd ../../'
 [[ -x /usr/bin/nvim && -x /usr/bin/fzf ]] && alias vf='nvim $(fzf)'
 
 # programme
-alias df='df -Th'
-alias du='du -sh'
 alias rm='rm -I'
 alias mv='mv -i'
-[[ -x /usr/bin/bat ]]       && alias cat='bat'
 [[ -x /usr/bin/fd ]]        && alias fd='fd -iIH'
 [[ -x /usr/bin/pwgen ]]     && alias pwgen='pwgen -cns 14 1'
 [[ -x /usr/bin/colordiff ]] && alias diff='colordiff'
