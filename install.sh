@@ -27,7 +27,6 @@ fi
 
 cp -r "$INSTALL_PATH/.vim" "$HOME"
 cp "$INSTALL_PATH/.bash_aliases" "$HOME"
-cp "$INSTALL_PATH/.bash_functions" "$HOME"
 cp "$INSTALL_PATH/.bashrc" "$HOME"
 
 if [[ ! -f $HOME/.gitconfig ]] ; then

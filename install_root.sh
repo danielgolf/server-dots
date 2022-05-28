@@ -21,7 +21,6 @@ mkdir -p "/root/.config"
 cp -r "$INSTALL_PATH/.config/nvim" "/root/.config"
 cp -r "$INSTALL_PATH/.vim" "/root"
 cp "$INSTALL_PATH/.bash_aliases_root" "/root/.bash_aliases"
-cp "$INSTALL_PATH/.bash_functions" "/root/.bash_functions"
 cp "$INSTALL_PATH/.bashrc" "/root/.bashrc"
 cp "$INSTALL_PATH/.tmux.conf" "/root"
 
